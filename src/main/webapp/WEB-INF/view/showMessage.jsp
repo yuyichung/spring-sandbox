@@ -10,6 +10,6 @@
 	<body>
 		<h1>HI</h1>
 		<h2>${message}</h2>
-		<button onclick="/addEntry">Add Entry</button>
+		<button onclick="javascript:location.href='/boom/addEntry'">Add Entry</button>
 	</body>
 </html>
