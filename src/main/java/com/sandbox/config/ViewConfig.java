@@ -8,6 +8,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
+import com.sandbox.model.BlogModel;
+
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages="com.sandbox.controller")
@@ -21,5 +23,11 @@ public class ViewConfig {
 		resolver.setSuffix(".jsp");
 
 		return resolver;
+	}
+
+	@Bean
+	public BlogModel blogEntries()
+	{
+		return new BlogModel();
 	}
 }
