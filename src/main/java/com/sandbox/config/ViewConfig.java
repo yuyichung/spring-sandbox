@@ -1,8 +1,13 @@
 package com.sandbox.config;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
@@ -25,9 +30,10 @@ public class ViewConfig {
 		return resolver;
 	}
 
-	@Bean
-	public BlogModel blogEntries()
-	{
-		return new BlogModel();
-	}
+//	@Bean
+//	@Scope(value=WebApplicationContext.SCOPE_SESSION)
+//	public List<BlogModel> blogEntries()
+//	{
+//		return new ArrayList<BlogModel>();
+//	}
 }

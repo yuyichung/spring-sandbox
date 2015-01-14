@@ -6,8 +6,8 @@ import javax.inject.Named;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
-@Named
 public class SpringContextAccessor implements ApplicationContextAware {
 
 	private static ApplicationContext applicationContext;

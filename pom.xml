@@ -123,6 +123,13 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+		
 	</dependencies>	
 	
 	<build>
@@ -141,6 +148,15 @@
     		    	<path>/boom</path>
     		    </configuration>
 			</plugin>
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+    		    <artifactId>maven-compiler-plugin</artifactId>
+        		<version>3.2</version>
+        		<configuration>
+          			<source>${java.version}</source>
+			        <target>${java.version}</target>
+        		</configuration>
+		    </plugin>
 		</plugins>
 	</build>
 </project>
