@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+	<changeSet id="0-1" author="joe">
+		<sql splitStatements="false">
+			CREATE DATABASE IF NOT EXISTS spring_sandbox
+			DEFAULT CHARACTER SET = utf8
+			DEFAULT COLLATE utf8_general_ci;
+		</sql>
+	</changeSet>
+	
+	<changeSet id="0-2" author="joe">
+		<createTable tableName="blog_entries">
+			<column name="id" autoIncrement="true" type="int">
+				<constraints primaryKey="true" primaryKeyName="pk_be"/>
+			</column>
+			<column name="be_author" type="varchar(255)"></column>
+			<column name="be_content" type="varchar(10000)"></column>
+			<column name="be_created_time" type="datetime"></column>
+		</createTable>
+	</changeSet>
+</databaseChangeLog>

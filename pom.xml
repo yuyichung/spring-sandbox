@@ -34,6 +34,14 @@
 		
 		<proxy.context.path>/service</proxy.context.path>
 
+		<!-- Database -->
+		<database.host>localhost</database.host>
+        <database.name>spring-sandbox</database.name>
+        <database.username>dev</database.username>
+        <database.password>ft53738078</database.password>
+        <database.parameter>autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;logger=com.fanzytv.mysql.MySqlLogger&amp;profileSQL=${mysql.log.profile}</database.parameter>
+
+        <database.driver>com.mysql.jdbc.Driver</database.driver>
 	</properties>
 	
 	<dependencies>
@@ -108,7 +116,19 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.1.3.Final</version>
+		</dependency>
+		
+		<!-- MySQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.9</version>
+		</dependency>
 		
 		<!-- Test Artifacts -->
 		<dependency>
@@ -156,6 +176,14 @@
           			<source>${java.version}</source>
 			        <target>${java.version}</target>
         		</configuration>
+		    </plugin>
+		    <plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>3.3.2</version>
+				<configuration>
+					<propertyFile>src/main/resources/properties/liquibase.properties</propertyFile>
+				</configuration>
 		    </plugin>
 		</plugins>
 	</build>
